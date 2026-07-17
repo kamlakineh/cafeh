@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Enterprise Restaurant Management System",
+  "description": "A luxury full-stack restaurant management platform with integrated receptionist, manager, waiter, kitchen, and owner dashboards, including AI business insights and customer service bot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

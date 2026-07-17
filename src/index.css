@@ -1,0 +1,1367 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Roboto", "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-accent: "Roboto", sans-serif;
+  
+  --color-brand: #2B6CB0;
+  --color-brand-hover: #1D4ED8;
+  --color-brand-light: #EBF8FF;
+  --color-card-bg: #FFFFFF;
+  --color-text-dark: #1A202C;
+  --color-text-muted: #718096;
+}
+
+body {
+  background-color: #F0F2F5;
+  color: #2D3748;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* ========================================== */
+/* KDS LIGHT THEME WITH PROFESSIONAL BLUE OVERRIDES */
+/* ========================================== */
+
+/* Root KDS Container - clean Soft Gray (#F5F7FA) background, Primary Text (#1F2937) */
+#kitchen-display-system {
+  background-color: #F5F7FA !important;
+  color: #1F2937 !important;
+}
+
+/* Main workspace area */
+#kitchen-display-system main {
+  background-color: #F5F7FA !important;
+}
+
+/* Headers & titles in workspace */
+#kitchen-display-system main h1,
+#kitchen-display-system main h2,
+#kitchen-display-system main h3,
+#kitchen-display-system main h4,
+#kitchen-display-system main h5,
+#kitchen-display-system main h6 {
+  color: #1F2937 !important; /* Primary Text */
+}
+
+/* Neutralize deep dark boxes into polished White (#FFFFFF) cards with subtle shadow */
+#kitchen-display-system main .bg-\[\#120904\],
+#kitchen-display-system main .bg-\[\#1A0F08\] {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border-color: #E5E7EB !important; /* Clean Border */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Card borders & dividers */
+#kitchen-display-system main .border-\[\#3E2415\],
+#kitchen-display-system main .border-\[\#3E2415\]\/40,
+#kitchen-display-system main .border-\[\#3E2415\]\/50,
+#kitchen-display-system main .divide-\[\#3E2415\] > * {
+  border-color: #E5E7EB !important;
+}
+
+/* Clean text colors in main panels */
+#kitchen-display-system main .text-white {
+  color: #1F2937 !important;
+}
+#kitchen-display-system main .text-white\/90 {
+  color: #1F2937 !important;
+}
+#kitchen-display-system main .text-white\/80 {
+  color: #1F2937 !important;
+}
+#kitchen-display-system main .text-white\/70 {
+  color: #6B7280 !important; /* Secondary Text */
+}
+#kitchen-display-system main .text-white\/60 {
+  color: #6B7280 !important; /* Secondary Text */
+}
+#kitchen-display-system main .text-white\/50 {
+  color: #9CA3AF !important; /* Muted Text */
+}
+#kitchen-display-system main .text-white\/40,
+#kitchen-display-system main .text-white\/30 {
+  color: #9CA3AF !important; /* Muted Text */
+}
+
+/* Inner containers and tickers list items - Secondary Surface (#EEF2F7) */
+#kitchen-display-system main .bg-white\/5,
+#kitchen-display-system main .bg-white\/10 {
+  background-color: #EEF2F7 !important;
+  color: #1F2937 !important;
+  border-color: #E5E7EB !important;
+}
+
+/* Charts and graphics visualizers - Deep Blue theme (#2563EB) */
+#kitchen-display-system main .bg-white\/25 {
+  background-color: rgba(37, 99, 235, 0.12) !important; /* Deep Blue tint */
+}
+#kitchen-display-system main .hover\:bg-white:hover {
+  background-color: #2563EB !important; /* Deep Blue highlight */
+  color: #FFFFFF !important;
+}
+#kitchen-display-system main .bg-white {
+  background-color: #2563EB !important; /* Primary Deep Blue fill */
+  color: #FFFFFF !important;
+}
+
+/* Custom timer progress bars */
+#kitchen-display-system main .bg-white\/70 {
+  background-color: #2563EB !important;
+}
+
+/* Inputs and Select boxes */
+#kitchen-display-system main select,
+#kitchen-display-system main input,
+#kitchen-display-system main textarea {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border-color: #E5E7EB !important;
+}
+#kitchen-display-system main select:focus,
+#kitchen-display-system main input:focus,
+#kitchen-display-system main textarea:focus {
+  border-color: #2563EB !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Buttons overriding */
+/* 1. Large primary actions (Accept, Complete, File Alert, Confirm, etc) */
+#kitchen-display-system main button.bg-white {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+#kitchen-display-system main button.bg-white:hover {
+  background-color: #1D4ED8 !important;
+}
+
+/* 2. Ghost/Outline buttons (Reject, Details, Cancel, Discard, etc) */
+#kitchen-display-system main button.bg-transparent,
+#kitchen-display-system main button.border-white\/30,
+#kitchen-display-system main button.border-white\/20 {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+}
+#kitchen-display-system main button.bg-transparent:hover,
+#kitchen-display-system main button.border-white\/30:hover,
+#kitchen-display-system main button.border-white\/20:hover {
+  background-color: #EEF2F7 !important;
+  color: #1F2937 !important;
+  border-color: #D1D5DB !important;
+}
+
+/* Floating AI Chat Drawer & Modals */
+#kitchen-display-system .fixed {
+  color: #1F2937 !important;
+}
+#kitchen-display-system .fixed .bg-\[\#120904\] {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+#kitchen-display-system .fixed .bg-\[\#1A0F08\] {
+  background-color: #F5F7FA !important;
+  border-color: #E5E7EB !important;
+}
+#kitchen-display-system .fixed .text-white {
+  color: #1F2937 !important;
+}
+#kitchen-display-system .fixed .text-white\/50 {
+  color: #6B7280 !important;
+}
+#kitchen-display-system .fixed input {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border-color: #E5E7EB !important;
+}
+#kitchen-display-system .fixed button.bg-white {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+/* Sidebar Styling - #1F2937 sidebar theme with white text */
+#kds-navigation-sidebar {
+  background-color: #1F2937 !important;
+  border-right: 1px solid #374151 !important;
+}
+#kds-navigation-sidebar * {
+  border-color: #374151 !important;
+}
+#kds-navigation-sidebar span.text-white\/50,
+#kds-navigation-sidebar p.text-white\/50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#kds-navigation-sidebar p.text-white,
+#kds-navigation-sidebar h2.text-white {
+  color: #FFFFFF !important;
+}
+#kds-navigation-sidebar button {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+#kds-navigation-sidebar button:hover {
+  color: #FFFFFF !important;
+  background-color: #374151 !important; /* Hover background #374151 */
+}
+/* Active item in sidebar - Active Item #2563EB with white text */
+#kds-navigation-sidebar button.bg-white {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+#kds-navigation-sidebar button.bg-white * {
+  color: #FFFFFF !important;
+}
+#kds-navigation-sidebar button.bg-white span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+/* Badge inside active item */
+#kds-navigation-sidebar button.bg-white span.bg-white {
+  background-color: #FFFFFF !important;
+  color: #2563EB !important;
+}
+#kds-navigation-sidebar .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* ========================================== */
+/* CUSTOMER VIEW (CAFE WEBSITE) FOOD-INSPIRED THEME */
+/* ========================================== */
+
+#customer-view {
+  background-color: #FFFDF8 !important;
+  color: #2E2E2E !important;
+}
+
+#customer-view main {
+  background-color: #FFFDF8 !important;
+}
+
+/* Headings in Customer View: Deep Earth Brown (#5D4037) */
+#customer-view h1,
+#customer-view h2,
+#customer-view h3,
+#customer-view h4,
+#customer-view h5,
+#customer-view h6 {
+  color: #5D4037 !important;
+}
+
+/* White or specific lighter texts in sections can stay white or gold */
+#customer-view .text-white,
+#customer-view .text-slate-300,
+#customer-view h2.text-white,
+#customer-view h3.text-white,
+#customer-view p.text-white,
+#customer-view span.text-white {
+  color: #FFFFFF !important;
+}
+
+/* Primary text colors */
+#customer-view .text-slate-900,
+#customer-view .text-slate-800 {
+  color: #2E2E2E !important;
+}
+
+/* Secondary text colors */
+#customer-view .text-slate-600,
+#customer-view .text-slate-700 {
+  color: #6B6B6B !important;
+}
+
+/* Muted text colors */
+#customer-view .text-slate-400,
+#customer-view .text-slate-500 {
+  color: #9A9A9A !important;
+}
+
+/* Backgrounds & Surfaces */
+#customer-view .bg-white {
+  background-color: #FFFFFF !important;
+}
+
+#customer-view .bg-slate-50,
+#customer-view .bg-slate-100 {
+  background-color: #F8F5F2 !important; /* Secondary Surface */
+}
+
+/* Gradient background on sections */
+#customer-view .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: #F8F5F2 !important; /* Secondary Surface */
+}
+
+/* Borders */
+#customer-view,
+#customer-view *,
+#customer-view .border-slate-100,
+#customer-view .border-slate-200,
+#customer-view .border-\[\#EDF2F7\],
+#customer-view .border-b {
+  border-color: #E8E1D9 !important;
+}
+
+/* Soft shadows for cards instead of heavy borders */
+#customer-view .shadow-\[0_2px_8px_rgba\(0\,0\,0\,0\.05\)\] {
+  box-shadow: 0 4px 16px rgba(93, 64, 55, 0.05) !important;
+  border-color: #E8E1D9 !important;
+}
+
+/* Hover effects with Gold #F4B400 accent for cards */
+#customer-view .group:hover {
+  border-color: #F4B400 !important;
+}
+
+/* Primary Color: Bold Red (#D62828) Overrides */
+#customer-view .bg-\[\#2B6CB0\],
+#customer-view .bg-blue-600 {
+  background-color: #D62828 !important;
+  color: #FFFFFF !important;
+}
+
+#customer-view .text-\[\#2B6CB0\],
+#customer-view .text-blue-600 {
+  color: #D62828 !important;
+}
+
+/* Lighter blue elements override */
+#customer-view .text-\[\#4299E1\],
+#customer-view .bg-\[\#4299E1\]\/10 {
+  color: #D62828 !important;
+}
+
+/* Highlight badge backgrounds */
+#customer-view .bg-\[\#2B6CB0\]\/10 {
+  background-color: rgba(214, 40, 40, 0.1) !important;
+  color: #D62828 !important;
+}
+
+/* Active navigation underbar in header */
+#customer-view span.bg-\[\#2B6CB0\] {
+  background-color: #D62828 !important;
+}
+
+/* Inputs, Select, Textareas */
+#customer-view input,
+#customer-view select,
+#customer-view textarea {
+  background-color: #FFFFFF !important;
+  color: #2E2E2E !important;
+  border: 1px solid #E8E1D9 !important;
+}
+
+#customer-view input:focus,
+#customer-view select:focus,
+#customer-view textarea:focus {
+  border-color: #D62828 !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(214, 40, 40, 0.2) !important;
+}
+
+/* Accent input focus states */
+#customer-view .focus\:ring-\[\#2B6CB0\]:focus {
+  --tw-ring-color: #D62828 !important;
+}
+
+/* Price Highlights & Ratings -> Warm Gold (#F4B400) */
+#customer-view span.text-xl.text-\[\#2B6CB0\],
+#customer-view p.text-[#2B6CB0],
+#customer-view .text-serif.text-\[\#2B6CB0\] {
+  color: #F4B400 !important;
+}
+
+/* Rating Stars - Warm Gold */
+#customer-view .text-\[\#2B6CB0\] svg,
+#customer-view .text-[#2B6CB0] svg,
+#customer-view svg.fill-current {
+  color: #F4B400 !important;
+  fill: #F4B400 !important;
+}
+
+/* Primary Button Hovers: subtle hover animations using Warm Gold (#F4B400) */
+#customer-view button.bg-\[\#2B6CB0\]:hover,
+#customer-view button.bg-blue-600:hover,
+#customer-view .hover\:bg-\[\#1D4ED8\]:hover {
+  background-color: #F4B400 !important;
+  color: #2E2E2E !important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Secondary Button Hovers */
+#customer-view button.bg-white:hover {
+  background-color: #F8F5F2 !important;
+  border-color: #F4B400 !important;
+}
+
+/* Footer Section Override: Deep Earth Brown (#5D4037) */
+#customer-view footer {
+  background-color: #5D4037 !important;
+  color: #FFFDF8 !important;
+  border-top: 1px solid #E8E1D9 !important;
+}
+
+#customer-view footer h2,
+#customer-view footer h3,
+#customer-view footer h4 {
+  color: #FFFFFF !important;
+}
+
+#customer-view footer p,
+#customer-view footer span,
+#customer-view footer button {
+  color: #FFFDF8 !important;
+}
+
+#customer-view footer button:hover {
+  color: #F4B400 !important;
+}
+
+#customer-view footer a {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+}
+
+#customer-view footer a:hover {
+  background-color: #F4B400 !important;
+  color: #2E2E2E !important;
+}
+
+/* Modals & Cart Drawer (fixed wrappers) */
+#customer-view .fixed,
+#customer-view .fixed * {
+  border-color: #E8E1D9 !important;
+}
+
+/* Specific button styles for cart checkouts */
+#customer-view .fixed button.bg-\[\#2B6CB0\] {
+  background-color: #D62828 !important;
+}
+
+#customer-view .fixed button.bg-\[\#2B6CB0\]:hover {
+  background-color: #F4B400 !important;
+  color: #2E2E2E !important;
+}
+
+#customer-view .relative.bg-white {
+  background-color: #FFFFFF !important;
+}
+
+/* Demo Role Switcher: keep it distinct but using the theme */
+#customer-view .bg-\[\#EBF8FF\] {
+  background-color: #F8F5F2 !important;
+  color: #5D4037 !important;
+}
+#customer-view .bg-\[\#EBF8FF\]:hover {
+  background-color: #E8E1D9 !important;
+}
+
+
+/* ========================================== */
+/* MANAGER PLATFORM (MANAGER COMMAND) MODERN PALETTE */
+/* ========================================== */
+
+#manager-system-dashboard {
+  background-color: #F5F7FA !important;
+  color: #1F2937 !important;
+}
+
+#manager-system-dashboard main {
+  background-color: #F5F7FA !important;
+}
+
+/* Base Headings & Titles: Primary Text (#1F2937) */
+#manager-system-dashboard h1,
+#manager-system-dashboard h2,
+#manager-system-dashboard h3,
+#manager-system-dashboard h4,
+#manager-system-dashboard h5,
+#manager-system-dashboard h6 {
+  color: #1F2937 !important;
+}
+
+/* Primary Text Color Override */
+#manager-system-dashboard .text-slate-900,
+#manager-system-dashboard .text-slate-800 {
+  color: #1F2937 !important;
+}
+
+/* Secondary Text Color Override */
+#manager-system-dashboard .text-slate-600,
+#manager-system-dashboard .text-slate-700 {
+  color: #6B7280 !important;
+}
+
+/* Muted Text Color Override */
+#manager-system-dashboard .text-slate-400,
+#manager-system-dashboard .text-slate-500 {
+  color: #9CA3AF !important;
+}
+
+/* Surface backgrounds: White (#FFFFFF) */
+#manager-system-dashboard .bg-white {
+  background-color: #FFFFFF !important;
+}
+
+/* Secondary Surface: #EEF2F7 */
+#manager-system-dashboard .bg-slate-50,
+#manager-system-dashboard .bg-slate-100,
+#manager-system-dashboard .hover\:bg-slate-50\/50:hover,
+#manager-system-dashboard .hover\:bg-slate-50:hover,
+#manager-system-dashboard .bg-slate-50\/50 {
+  background-color: #EEF2F7 !important;
+}
+
+/* Borders: #E5E7EB */
+#manager-system-dashboard *,
+#manager-system-dashboard .border-slate-50,
+#manager-system-dashboard .border-slate-100,
+#manager-system-dashboard .border-slate-200,
+#manager-system-dashboard .border-slate-300,
+#manager-system-dashboard .border-slate-400,
+#manager-system-dashboard .border {
+  border-color: #E5E7EB !important;
+}
+
+/* Sidebar Specific Overrides */
+#manager-system-dashboard aside {
+  background-color: #1F2937 !important;
+  border-color: #374151 !important;
+}
+
+#manager-system-dashboard aside * {
+  border-color: #374151 !important;
+}
+
+#manager-system-dashboard aside h2 {
+  color: #FFFFFF !important;
+}
+
+#manager-system-dashboard aside span.text-slate-400 {
+  color: #9CA3AF !important;
+}
+
+/* Active navigation underbar or tags */
+#manager-system-dashboard span.bg-blue-600,
+#manager-system-dashboard span.bg-\[\#2B6CB0\] {
+  background-color: #2563EB !important;
+}
+
+/* Forms, Inputs, Textareas, Selects */
+#manager-system-dashboard input,
+#manager-system-dashboard select,
+#manager-system-dashboard textarea {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+}
+
+#manager-system-dashboard input:focus,
+#manager-system-dashboard select:focus,
+#manager-system-dashboard textarea:focus {
+  border-color: #2563EB !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Primary buttons and actions -> Deep Blue (#2563EB) */
+#manager-system-dashboard button.bg-blue-600,
+#manager-system-dashboard button.bg-\[\#2B6CB0\],
+#manager-system-dashboard .bg-\[\#2B6CB0\] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+#manager-system-dashboard button.bg-blue-600:hover,
+#manager-system-dashboard button.bg-\[\#2B6CB0\]:hover,
+#manager-system-dashboard .hover\:bg-blue-700:hover {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+}
+
+/* Status Colors: Success, Warning, Error, Info */
+#manager-system-dashboard .bg-green-100,
+#manager-system-dashboard .bg-green-50,
+#manager-system-dashboard .bg-emerald-50 {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.2) !important;
+}
+#manager-system-dashboard .text-green-700,
+#manager-system-dashboard .text-green-600,
+#manager-system-dashboard .text-emerald-600 {
+  color: #22C55E !important;
+}
+
+#manager-system-dashboard .bg-amber-100,
+#manager-system-dashboard .bg-amber-50,
+#manager-system-dashboard .bg-yellow-50 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+  border-color: rgba(245, 158, 11, 0.2) !important;
+}
+#manager-system-dashboard .text-amber-700,
+#manager-system-dashboard .text-amber-600,
+#manager-system-dashboard .text-yellow-500 {
+  color: #F59E0B !important;
+}
+
+#manager-system-dashboard .bg-red-100,
+#manager-system-dashboard .bg-red-50,
+#manager-system-dashboard .bg-rose-100 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.2) !important;
+}
+#manager-system-dashboard .text-red-700,
+#manager-system-dashboard .text-red-600,
+#manager-system-dashboard .text-rose-700,
+#manager-system-dashboard .text-rose-800 {
+  color: #EF4444 !important;
+}
+
+#manager-system-dashboard .bg-blue-50,
+#manager-system-dashboard .bg-cyan-50 {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+  border-color: rgba(14, 165, 233, 0.2) !important;
+}
+#manager-system-dashboard .text-blue-500,
+#manager-system-dashboard .text-blue-600,
+#manager-system-dashboard .text-cyan-600 {
+  color: #0EA5E9 !important;
+}
+
+/* Subtle shadows & Hover transitions */
+#manager-system-dashboard .shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+}
+
+#manager-system-dashboard button,
+#manager-system-dashboard input,
+#manager-system-dashboard select,
+#manager-system-dashboard textarea {
+  transition: all 0.2s ease-in-out !important;
+}
+
+
+/* ========================================== */
+/* WAITER PLATFORM (AURA FLOOR / WAITER FLOOR) MODERN LIGHT PALETTE */
+/* ========================================== */
+
+#waiter-pocket-pos {
+  background-color: #F5F7FA !important;
+  color: #1F2937 !important;
+}
+
+#waiter-pocket-pos main,
+#waiter-pocket-pos .flex-grow,
+#waiter-pocket-pos .flex-1.bg-slate-900,
+#waiter-pocket-pos .bg-slate-900:not(:first-child),
+#waiter-pocket-pos .bg-slate-950:not(#waiter-sticky-bottom-navigation),
+#waiter-pocket-pos .bg-slate-950\/60,
+#waiter-pocket-pos .bg-slate-900\/60,
+#waiter-pocket-pos .bg-slate-900\/50 {
+  background-color: #F5F7FA !important;
+}
+
+/* Headings & Text Colors to Dark/Charcoal (#1F2937) */
+#waiter-pocket-pos h1,
+#waiter-pocket-pos h2,
+#waiter-pocket-pos h3,
+#waiter-pocket-pos h4,
+#waiter-pocket-pos h5,
+#waiter-pocket-pos h6,
+#waiter-pocket-pos .text-white,
+#waiter-pocket-pos .text-slate-100,
+#waiter-pocket-pos .text-slate-200 {
+  color: #1F2937 !important;
+}
+
+#waiter-pocket-pos .text-slate-300,
+#waiter-pocket-pos .text-slate-400 {
+  color: #6B7280 !important;
+}
+
+#waiter-pocket-pos .text-slate-500,
+#waiter-pocket-pos .text-slate-600 {
+  color: #9CA3AF !important;
+}
+
+/* Surface backgrounds: White (#FFFFFF) */
+#waiter-pocket-pos div.bg-slate-950:not(#waiter-sticky-bottom-navigation),
+#waiter-pocket-pos div.bg-slate-900\/80,
+#waiter-pocket-pos div.bg-slate-900:not(:first-child),
+#waiter-pocket-pos .bg-white {
+  background-color: #FFFFFF !important;
+}
+
+/* Top brand status bar and Bottom sticky navigation bar styled as Sidebar spec:
+Sidebar:
+- Background: #1F2937
+- Active Item: #2563EB
+- Hover: #374151
+- Text: White */
+#waiter-pocket-pos > div:first-child,
+#waiter-pocket-pos .bg-slate-900:first-child {
+  background-color: #1F2937 !important;
+  border-bottom: 1px solid #374151 !important;
+}
+
+#waiter-pocket-pos > div:first-child *,
+#waiter-pocket-pos .bg-slate-900:first-child * {
+  color: #FFFFFF !important;
+}
+
+#waiter-pocket-pos > div:first-child select {
+  background-color: #1F2937 !important;
+  border: 1px solid #374151 !important;
+  color: #FFFFFF !important;
+}
+
+#waiter-sticky-bottom-navigation {
+  background-color: #1F2937 !important;
+  border-top: 1px solid #374151 !important;
+}
+
+#waiter-sticky-bottom-navigation button {
+  color: #9CA3AF !important;
+}
+
+#waiter-sticky-bottom-navigation button:hover {
+  background-color: #374151 !important;
+  color: #FFFFFF !important;
+}
+
+#waiter-sticky-bottom-navigation button.text-\[\#D4AF37\],
+#waiter-sticky-bottom-navigation button.scale-105 {
+  color: #FFFFFF !important;
+}
+
+#waiter-sticky-bottom-navigation button .bg-\[\#D4AF37\]\/10,
+#waiter-sticky-bottom-navigation button [class*="bg-[#D4AF37]"] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+/* Border replacements to #E5E7EB */
+#waiter-pocket-pos *,
+#waiter-pocket-pos .border-slate-800,
+#waiter-pocket-pos .border-slate-850,
+#waiter-pocket-pos .border-slate-900,
+#waiter-pocket-pos .border {
+  border-color: #E5E7EB !important;
+}
+
+/* Sidebar / top/bottom bar internal borders remain dark */
+#waiter-pocket-pos > div:first-child *,
+#waiter-sticky-bottom-navigation * {
+  border-color: #374151 !important;
+}
+
+/* Form, input, select, textarea styling */
+#waiter-pocket-pos input,
+#waiter-pocket-pos select,
+#waiter-pocket-pos textarea {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+}
+
+#waiter-pocket-pos input:focus,
+#waiter-pocket-pos select:focus,
+#waiter-pocket-pos textarea:focus {
+  border-color: #2563EB !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Primary buttons and actions -> Deep Blue (#2563EB) */
+#waiter-pocket-pos button.bg-gradient-to-r,
+#waiter-pocket-pos button.bg-\[\#D4AF37\],
+#waiter-pocket-pos [class*="bg-[#D4AF37]"] {
+  background-image: none !important;
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+#waiter-pocket-pos button.bg-gradient-to-r:hover,
+#waiter-pocket-pos button.bg-\[\#D4AF37\]:hover,
+#waiter-pocket-pos [class*="bg-[#D4AF37]"]:hover {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+}
+
+/* Gold/Yellow references mapped to Primary Deep Blue */
+#waiter-pocket-pos .text-\[\#D4AF37\],
+#waiter-pocket-pos svg.text-\[\#D4AF37\],
+#waiter-pocket-pos [class*="text-[#D4AF37]"] {
+  color: #2563EB !important;
+}
+
+#waiter-pocket-pos .border-\[\#D4AF37\],
+#waiter-pocket-pos [class*="border-[#D4AF37]"] {
+  border-color: #2563EB !important;
+}
+
+#waiter-pocket-pos .shadow-\[0_0_8px_\#D4AF37\] {
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* Touch Keypad */
+#waiter-pocket-pos .grid.grid-cols-3.bg-slate-950,
+#waiter-pocket-pos .grid.grid-cols-3 {
+  background-color: #EEF2F7 !important;
+  border-color: #E5E7EB !important;
+}
+
+#waiter-pocket-pos .grid.grid-cols-3 button {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+}
+
+#waiter-pocket-pos .grid.grid-cols-3 button:active {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+/* Secondary Surface styling: #EEF2F7 */
+#waiter-pocket-pos .bg-amber-500\/10,
+#waiter-pocket-pos [class*="bg-amber-500/10"],
+#waiter-pocket-pos .bg-[#EEF2F7],
+#waiter-pocket-pos .bg-slate-100 {
+  background-color: #EEF2F7 !important;
+}
+
+/* Tables Map Cards styling */
+#waiter-pocket-pos #tables-floor-map .grid > div {
+  background-image: none !important;
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03) !important;
+}
+
+/* Table Cards borders corresponding to Status Colors */
+#waiter-pocket-pos .border-emerald-500\/20,
+#waiter-pocket-pos .border-emerald-500 {
+  border-color: #E5E7EB !important;
+  border-left: 4px solid #22C55E !important;
+}
+
+#waiter-pocket-pos .border-rose-500\/20,
+#waiter-pocket-pos .border-rose-500 {
+  border-color: #E5E7EB !important;
+  border-left: 4px solid #EF4444 !important;
+}
+
+#waiter-pocket-pos .border-amber-500\/20,
+#waiter-pocket-pos .border-amber-500 {
+  border-color: #E5E7EB !important;
+  border-left: 4px solid #F59E0B !important;
+}
+
+#waiter-pocket-pos .border-sky-500\/20,
+#waiter-pocket-pos .border-sky-500 {
+  border-color: #E5E7EB !important;
+  border-left: 4px solid #0EA5E9 !important;
+}
+
+#waiter-pocket-pos .border-purple-500\/20,
+#waiter-pocket-pos .border-purple-500 {
+  border-color: #E5E7EB !important;
+  border-left: 4px solid #A855F7 !important;
+}
+
+/* Legend items and badges */
+#waiter-pocket-pos .bg-emerald-500 {
+  background-color: #22C55E !important;
+}
+#waiter-pocket-pos .bg-rose-500 {
+  background-color: #EF4444 !important;
+}
+#waiter-pocket-pos .bg-amber-500 {
+  background-color: #F59E0B !important;
+}
+#waiter-pocket-pos .bg-sky-500 {
+  background-color: #0EA5E9 !important;
+}
+#waiter-pocket-pos .bg-purple-500 {
+  background-color: #A855F7 !important;
+}
+
+/* Table actions Drawer Sheet Backdrop */
+#waiter-pocket-pos .fixed.bg-slate-950\/80 {
+  background-color: rgba(31, 41, 55, 0.6) !important;
+}
+
+/* Drawer Inner Sheet and container */
+#waiter-pocket-pos .fixed.bg-slate-950\/80 > div {
+  background-color: #FFFFFF !important;
+  border-top: 3px solid #2563EB !important;
+}
+
+/* Drawer interior cards and buttons */
+#waiter-pocket-pos .fixed.bg-slate-950\/80 button.bg-slate-950 {
+  background-color: #EEF2F7 !important;
+  color: #1F2937 !important;
+  border-color: #E5E7EB !important;
+}
+
+#waiter-pocket-pos .fixed.bg-slate-950\/80 button.bg-slate-950:hover {
+  background-color: #E5E7EB !important;
+}
+
+/* Notification Popup card */
+#waiter-pocket-pos .bg-gradient-to-r.from-amber-600 {
+  background-image: none !important;
+  background-color: #F59E0B !important;
+  border-color: #F59E0B !important;
+}
+
+
+/* ========================================================================== */
+/* CASHIER / RECEPTION PLATFORM MODERN LIGHT PALETTE (ROBOTO & OPEN SANS)    */
+/* ========================================================================== */
+
+#cashier-master-layout,
+#cashier-login-viewport {
+  font-family: 'Open Sans', 'Inter', sans-serif !important;
+  background-color: #F5F7FA !important;
+  color: #1F2937 !important;
+}
+
+#cashier-master-layout h1,
+#cashier-master-layout h2,
+#cashier-master-layout h3,
+#cashier-master-layout h4,
+#cashier-master-layout h5,
+#cashier-master-layout h6,
+#cashier-login-viewport h1,
+#cashier-login-viewport h2,
+#cashier-login-viewport h3,
+#cashier-master-layout .font-serif,
+#cashier-login-viewport .font-serif {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+/* Ensure font-sans and font-mono are clean */
+#cashier-master-layout .font-sans,
+#cashier-login-viewport .font-sans {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* 1. Main Workspace & Login viewport Background */
+#cashier-master-layout {
+  background-color: #F5F7FA !important;
+}
+#cashier-master-layout main {
+  background-color: #F5F7FA !important;
+}
+#cashier-login-viewport {
+  background-color: #F5F7FA !important;
+}
+
+/* 2. Sidebar Navigation Panel Overrides
+Background: #1F2937
+Active Item: #2563EB
+Hover: #374151
+Text: White */
+#cashier-master-layout aside {
+  background-color: #1F2937 !important;
+  border-right: 1px solid #374151 !important;
+}
+#cashier-master-layout aside * {
+  border-color: #374151 !important;
+}
+#cashier-master-layout aside h1,
+#cashier-master-layout aside h2,
+#cashier-master-layout aside p.text-slate-200 {
+  color: #FFFFFF !important;
+}
+#cashier-master-layout aside .text-\[\#D4AF37\],
+#cashier-master-layout aside h1.text-\[\#D4AF37\],
+#cashier-master-layout aside span.text-\[\#D4AF37\] {
+  color: #2563EB !important; /* Brand accent inside sidebar is blue */
+}
+#cashier-master-layout aside .bg-gradient-to-tr.from-\[\#D4AF37\],
+#cashier-master-layout aside .bg-slate-850 {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border-color: #2563EB !important;
+}
+#cashier-master-layout aside nav button {
+  color: #9CA3AF !important;
+}
+#cashier-master-layout aside nav button:hover {
+  background-color: #374151 !important;
+  color: #FFFFFF !important;
+}
+#cashier-master-layout aside nav button.bg-slate-950 {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+  border-left: 4px solid #2563EB !important;
+}
+#cashier-master-layout aside nav button.bg-slate-950 * {
+  color: #FFFFFF !important;
+}
+
+/* Sidebar toggle button */
+#cashier-master-layout aside button.absolute {
+  background-color: #1F2937 !important;
+  border-color: #374151 !important;
+  color: #FFFFFF !important;
+}
+#cashier-master-layout aside button.absolute:hover {
+  color: #2563EB !important;
+  background-color: #374151 !important;
+}
+
+/* 3. Terminal welcome / Counter Dispatch Hub top banner (Replace dark/gold with clean premium card or blue) */
+#cashier-master-layout .bg-slate-900:not(aside),
+#cashier-dashboard-home .bg-slate-900 {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+  color: #1F2937 !important;
+}
+#cashier-master-layout .bg-slate-900 h2.text-\[\#D4AF37\],
+#cashier-dashboard-home .bg-slate-900 h2.text-\[\#D4AF37\],
+#cashier-master-layout .bg-slate-900 h2,
+#cashier-dashboard-home .bg-slate-900 h2 {
+  color: #2563EB !important;
+}
+#cashier-master-layout .bg-slate-900 p.text-slate-300,
+#cashier-dashboard-home .bg-slate-900 p.text-slate-300,
+#cashier-master-layout .bg-slate-900 p,
+#cashier-dashboard-home .bg-slate-900 p {
+  color: #6B7280 !important;
+}
+
+/* 4. Replacing Gold (#D4AF37) across all text, borders, bg, hovers in Cashier */
+#cashier-master-layout .text-\[\#D4AF37\],
+#cashier-master-layout [class*="text-[#D4AF37]"] {
+  color: #2563EB !important;
+}
+#cashier-master-layout .border-\[\#D4AF37\],
+#cashier-master-layout [class*="border-[#D4AF37]"] {
+  border-color: #2563EB !important;
+}
+#cashier-master-layout .bg-\[\#D4AF37\],
+#cashier-master-layout [class*="bg-[#D4AF37]"]:not([class*="/"]):not(.bg-\[\#D4AF37\]\/10),
+#cashier-master-layout button.bg-\[\#D4AF37\] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+#cashier-master-layout .bg-\[\#D4AF37\]\/10,
+#cashier-master-layout [class*="bg-[#D4AF37]/10"] {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+  color: #2563EB !important;
+}
+#cashier-master-layout button.bg-\[\#D4AF37\]:hover,
+#cashier-master-layout button.hover\:bg-amber-500:hover,
+#cashier-master-layout .hover\:bg-amber-500:hover,
+#cashier-master-layout button:hover:not(.bg-rose-600) {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+}
+
+/* 5. Surface White Cards (#FFFFFF) and Secondary Surface (#EEF2F7) */
+#cashier-master-layout .bg-white {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+#cashier-master-layout .bg-slate-50,
+#cashier-master-layout .bg-slate-100,
+#cashier-master-layout .bg-slate-150 {
+  background-color: #EEF2F7 !important;
+}
+
+/* 6. Clean Borders (#E5E7EB) */
+#cashier-master-layout *,
+#cashier-master-layout .border-slate-100,
+#cashier-master-layout .border-slate-150,
+#cashier-master-layout .border-slate-200,
+#cashier-master-layout .border-slate-250,
+#cashier-master-layout .border-slate-900,
+#cashier-master-layout .border-slate-950,
+#cashier-master-layout .divide-slate-100 > * {
+  border-color: #E5E7EB !important;
+}
+
+/* 7. Text Colors:
+Primary Text: #1F2937
+Secondary Text: #6B7280
+Muted Text: #9CA3AF */
+#cashier-master-layout h1,
+#cashier-master-layout h2,
+#cashier-master-layout h3,
+#cashier-master-layout h4,
+#cashier-master-layout h5,
+#cashier-master-layout h6,
+#cashier-master-layout .text-slate-800,
+#cashier-master-layout .text-slate-900,
+#cashier-master-layout .text-slate-700 {
+  color: #1F2937 !important;
+}
+#cashier-master-layout .text-slate-500,
+#cashier-master-layout .text-slate-600,
+#cashier-master-layout .text-slate-400:not(.animate-pulse) {
+  color: #6B7280 !important;
+}
+#cashier-master-layout .text-slate-300 {
+  color: #9CA3AF !important;
+}
+
+/* 8. Forms & Inputs, Selects, Textareas
+Background: White (#FFFFFF)
+Border: #E5E7EB
+Text: #1F2937
+Focus: #2563EB */
+#cashier-master-layout input,
+#cashier-master-layout select,
+#cashier-master-layout textarea {
+  background-color: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+}
+#cashier-master-layout input:focus,
+#cashier-master-layout select:focus,
+#cashier-master-layout textarea:focus,
+#cashier-master-layout .focus\:ring-\[\#D4AF37\]:focus {
+  border-color: #2563EB !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* 9. Buttons
+Primary: Deep Blue (#2563EB)
+Secondary/Normal: White surface, border E5E7EB */
+#cashier-master-layout button.bg-blue-600,
+#cashier-master-layout button.bg-\[\#2B6CB0\],
+#cashier-master-layout .bg-\[\#2B6CB0\] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+#cashier-master-layout button.bg-blue-600:hover,
+#cashier-master-layout button.bg-\[\#2B6CB0\]:hover,
+#cashier-master-layout .hover\:bg-blue-700:hover {
+  background-color: #1D4ED8 !important;
+}
+
+/* 10. Tables & Lists */
+#cashier-master-layout table thead.bg-slate-50 {
+  background-color: #EEF2F7 !important;
+}
+#cashier-master-layout table thead th {
+  color: #6B7280 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+#cashier-master-layout table tbody tr:hover {
+  background-color: #EEF2F7 !important;
+}
+
+/* 11. Status colors:
+Success: #22C55E
+Warning: #F59E0B
+Error: #EF4444
+Info: #0EA5E9 */
+#cashier-master-layout .bg-emerald-50,
+#cashier-master-layout .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+#cashier-master-layout .text-emerald-700,
+#cashier-master-layout .text-green-700 {
+  color: #22C55E !important;
+}
+#cashier-master-layout .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+#cashier-master-layout .text-amber-800,
+#cashier-master-layout .text-amber-600 {
+  color: #F59E0B !important;
+}
+#cashier-master-layout .bg-rose-100,
+#cashier-master-layout .bg-rose-50 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+#cashier-master-layout .text-rose-700,
+#cashier-master-layout .text-rose-600 {
+  color: #EF4444 !important;
+}
+#cashier-master-layout .bg-blue-50 {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+}
+#cashier-master-layout .text-blue-700 {
+  color: #0EA5E9 !important;
+}
+
+/* Walk-in POS view left & right panel styles */
+#walk-in-pos-view .bg-white {
+  background-color: #FFFFFF !important;
+}
+#walk-in-pos-view select,
+#walk-in-pos-view input {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+
+/* Category selectors */
+#walk-in-pos-view button.bg-\[\#D4AF37\] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+/* 12. Settlement method cards in Walk-In POS */
+#walk-in-pos-view .bg-\[\#D4AF37\]\/10.border-\[\#D4AF37\] {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+  border-color: #2563EB !important;
+  color: #2563EB !important;
+}
+
+/* 13. Modals & Overlays */
+#cashier-master-layout .fixed.bg-slate-950\/70 {
+  background-color: rgba(31, 41, 55, 0.6) !important;
+}
+#cashier-master-layout .fixed.bg-slate-950\/70 .bg-white {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+
+/* 14. Keyboard shortcut container in POS footer */
+#walk-in-pos-view .bg-slate-950 {
+  background-color: #1F2937 !important;
+  border: 1px solid #E5E7EB !important;
+  color: #9CA3AF !important;
+}
+#walk-in-pos-view .bg-slate-950 strong {
+  color: #FFFFFF !important;
+}
+
+/* 15. Real-time toast chimes */
+#cashier-master-layout .fixed.bg-slate-900 {
+  background-color: #1F2937 !important;
+  border: 1px solid #2563EB !important;
+  color: #FFFFFF !important;
+}
+#cashier-master-layout .fixed.bg-slate-900 * {
+  color: #FFFFFF !important;
+}
+
+/* 16. Cashier Login Portal (#cashier-login-viewport) */
+#cashier-login-viewport {
+  background-color: #F5F7FA !important;
+}
+#cashier-login-viewport .bg-slate-900 {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+#cashier-login-viewport .bg-slate-900 h2.text-\[\#D4AF37\] {
+  color: #1F2937 !important;
+}
+#cashier-login-viewport .bg-slate-900 .bg-\[\#D4AF37\]\/10 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+#cashier-login-viewport .bg-slate-950 {
+  background-color: #FFFFFF !important;
+}
+#cashier-login-viewport input,
+#cashier-login-viewport select {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+  color: #1F2937 !important;
+}
+#cashier-login-viewport input:focus,
+#cashier-login-viewport select:focus {
+  border-color: #2563EB !important;
+}
+#cashier-login-viewport button[type="submit"] {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+}
+#cashier-login-viewport button[type="submit"]:hover {
+  background: #1D4ED8 !important;
+}
+#cashier-login-viewport .border-slate-800 {
+  border-color: #E5E7EB !important;
+}
+#cashier-login-viewport .text-amber-500,
+#cashier-login-viewport .text-slate-300,
+#cashier-login-viewport .text-slate-400 {
+  color: #6B7280 !important;
+}
+#cashier-login-viewport .bg-slate-950.border-slate-800:hover {
+  border-color: #2563EB !important;
+  color: #2563EB !important;
+  background-color: #EEF2F7 !important;
+}
+#cashier-login-viewport svg {
+  color: #2563EB !important;
+}
+
+
+/* ========================================================================== */
+/* CUSTOMER VIEW TYPOGRAPHY OVERRIDES (ROBOTO & OPEN SANS)                   */
+/* ========================================================================== */
+
+#customer-view {
+  font-family: 'Open Sans', 'Inter', sans-serif !important;
+}
+
+#customer-view h1,
+#customer-view h2,
+#customer-view h3,
+#customer-view h4,
+#customer-view h5,
+#customer-view h6,
+#customer-view .font-serif,
+#customer-view .font-accent,
+#customer-view [class*="font-serif"],
+#customer-view [class*="font-accent"] {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+#customer-view .font-sans,
+#customer-view [class*="font-sans"],
+#customer-view button,
+#customer-view input,
+#customer-view select,
+#customer-view textarea,
+#customer-view p,
+#customer-view span,
+#customer-view div,
+#customer-view li,
+#customer-view a {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Ensure nested elements in headings and serif containers use Roboto */
+#customer-view h1 *,
+#customer-view h2 *,
+#customer-view h3 *,
+#customer-view h4 *,
+#customer-view h5 *,
+#customer-view h6 *,
+#customer-view .font-serif *,
+#customer-view [class*="font-serif"] * {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+
+
+
+
+
