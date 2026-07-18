@@ -1,5 +1,13 @@
 import React from "react";
-import { Lock, ShieldCheck, AlertCircle, RefreshCw, LogOut, KeyRound, ChevronDown } from "lucide-react";
+import {
+  Lock,
+  ShieldCheck,
+  AlertCircle,
+  RefreshCw,
+  LogOut,
+  KeyRound,
+  ChevronDown,
+} from "lucide-react";
 import { Employee } from "../types";
 
 interface StaffPinGateProps {
@@ -13,7 +21,7 @@ export default function StaffPinGate({
   userRole,
   employees,
   onAuthSuccess,
-  onCancel
+  onCancel,
 }: StaffPinGateProps) {
   const [inputEmpId, setInputEmpId] = React.useState<string>("");
   const [showCheatSheet, setShowCheatSheet] = React.useState<boolean>(false);
@@ -26,10 +34,10 @@ export default function StaffPinGate({
     if (num === "CLEAR") {
       setPin("");
     } else if (num === "DELETE") {
-      setPin(prev => prev.slice(0, -1));
+      setPin((prev) => prev.slice(0, -1));
     } else {
       if (pin.length < 4) {
-        setPin(prev => prev + num);
+        setPin((prev) => prev + num);
       }
     }
   };
@@ -49,18 +57,27 @@ export default function StaffPinGate({
       const res = await fetch("/api/employees/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: inputEmpId.trim(), pin })
+        body: JSON.stringify({ id: inputEmpId.trim(), pin }),
       });
 
       if (!res.ok) {
         const data = await res.json();
-        setErrorMsg(data.error || "Invalid Employee ID or security PIN. Access attempt recorded.");
+        setErrorMsg(
+          data.error ||
+            "Invalid Employee ID or security PIN. Access attempt recorded.",
+        );
         setPin("");
         return;
       }
 
       const data = await res.json();
       const employee = data.employee;
+
+      if (!employee || !employee.name) {
+        setErrorMsg("Authentication failed: Invalid server response.");
+        setPin("");
+        return;
+      }
 
       // Success!
       setSuccessMsg(`Authorization Granted. Welcome back, ${employee.name}!`);
@@ -83,17 +100,26 @@ export default function StaffPinGate({
 
   const targetDashboardLabel = () => {
     switch (userRole) {
-      case "manager": return "Manager Command";
-      case "owner": return "Owner Executive Intel";
-      case "cashier": return "Reception / Cashier POS";
-      case "waiter": return "Waiter Floor Grid";
-      case "kitchen": return "Kitchen Display System (KDS)";
-      default: return "Staff Dashboard";
+      case "manager":
+        return "Manager Command";
+      case "owner":
+        return "Owner Executive Intel";
+      case "cashier":
+        return "Reception / Cashier POS";
+      case "waiter":
+        return "Waiter Floor Grid";
+      case "kitchen":
+        return "Kitchen Display System (KDS)";
+      default:
+        return "Staff Dashboard";
     }
   };
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center px-4 py-8 bg-[#0F172A]/50 animate-fadeIn" id="secure-staff-gate">
+    <div
+      className="min-h-[85vh] flex items-center justify-center px-4 py-8 bg-[#0F172A]/50 animate-fadeIn"
+      id="secure-staff-gate"
+    >
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
         {/* Subtle decorative glow */}
         <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-[#2B6CB0] rounded-3xl opacity-15 blur-lg pointer-events-none" />
@@ -102,7 +128,9 @@ export default function StaffPinGate({
           <div className="mx-auto w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center border border-amber-500/30 animate-pulse">
             <Lock className="w-5 h-5 text-amber-500" />
           </div>
-          <h2 className="font-serif text-lg font-bold text-white uppercase tracking-wider">Aura Staff Terminal</h2>
+          <h2 className="font-serif text-lg font-bold text-white uppercase tracking-wider">
+            Aura Staff Terminal
+          </h2>
           <p className="text-[10px] font-mono text-[#2B6CB0] uppercase tracking-widest font-black">
             LOCKED • {targetDashboardLabel()}
           </p>
@@ -123,7 +151,10 @@ export default function StaffPinGate({
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4 relative z-10 font-sans">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-6 space-y-4 relative z-10 font-sans"
+        >
           {/* Employee ID input instead of select dropdown */}
           <div className="space-y-1">
             <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">
@@ -180,7 +211,20 @@ export default function StaffPinGate({
 
           {/* Secure Touchscreen Keypad */}
           <div className="grid grid-cols-3 gap-2 bg-slate-950 p-4 rounded-2xl border border-slate-800 select-none lg:hidden">
-            {["1", "2", "3", "4", "5", "6", "7", "8", "9", "DELETE", "0", "CLEAR"].map((keyChar) => (
+            {[
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "DELETE",
+              "0",
+              "CLEAR",
+            ].map((keyChar) => (
               <button
                 key={keyChar}
                 type="button"
@@ -230,8 +274,12 @@ export default function StaffPinGate({
               onClick={() => setShowCheatSheet(!showCheatSheet)}
               className="w-full flex items-center justify-between text-[10px] font-mono text-slate-500 uppercase tracking-wider hover:text-slate-300 transition-colors py-1"
             >
-              <span>{showCheatSheet ? "Hide" : "Show"} Active IDs & PINs (Demo)</span>
-              <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${showCheatSheet ? "rotate-180" : ""}`} />
+              <span>
+                {showCheatSheet ? "Hide" : "Show"} Active IDs & PINs (Demo)
+              </span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${showCheatSheet ? "rotate-180" : ""}`}
+              />
             </button>
             {showCheatSheet && (
               <div className="mt-2 bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1.5 animate-fadeIn font-mono text-[9px] text-slate-400">
@@ -241,27 +289,37 @@ export default function StaffPinGate({
                   <span>PIN</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-amber-500 font-bold">Owner Dashboard</span>
+                  <span className="text-amber-500 font-bold">
+                    Owner Dashboard
+                  </span>
                   <span className="font-bold text-white">EMP-099</span>
                   <span className="text-amber-400 font-bold">9999</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#2B6CB0] font-bold">Manager Dashboard</span>
+                  <span className="text-[#2B6CB0] font-bold">
+                    Manager Dashboard
+                  </span>
                   <span className="font-bold text-white">EMP-100</span>
                   <span className="text-amber-400 font-bold">5555</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-emerald-500 font-bold">Kitchen Display (KDS)</span>
+                  <span className="text-emerald-500 font-bold">
+                    Kitchen Display (KDS)
+                  </span>
                   <span className="font-bold text-white">EMP-101</span>
                   <span className="text-amber-400 font-bold">1111</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-purple-400 font-bold">Cashier Dashboard</span>
+                  <span className="text-purple-400 font-bold">
+                    Cashier Dashboard
+                  </span>
                   <span className="font-bold text-white">EMP-104</span>
                   <span className="text-amber-400 font-bold">4444</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-rose-400 font-bold">Waiter Floor Grid</span>
+                  <span className="text-rose-400 font-bold">
+                    Waiter Floor Grid
+                  </span>
                   <span className="font-bold text-white">EMP-105</span>
                   <span className="text-amber-400 font-bold">1234</span>
                 </div>
