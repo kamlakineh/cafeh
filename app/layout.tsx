@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../src/index.css";
 
 export const metadata: Metadata = {
-  title: "Aura Café — Luxury Dining Experience",
+  title: "Real Café — Luxury Dining Experience",
   description:
     "Premium dark-themed café with gold accents. Truffle Wagyu burgers, craft drinks, and an unforgettable dining experience.",
 };
