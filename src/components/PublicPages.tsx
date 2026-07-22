@@ -96,7 +96,7 @@ export default function PublicPages({
   const [chatOpen, setChatOpen] = React.useState(false);
   const [chatMessage, setChatMessage] = React.useState("");
   const [chatHistory, setChatHistory] = React.useState<{ sender: 'user' | 'bot', text: string }[]>([
-    { sender: 'bot', text: "Welcome to Aura Gourmet! I am your luxury AI Concierge. How can I assist you with our fine dining menu or story today?" }
+    { sender: 'bot', text: "Welcome to Real Gourmet! I am your luxury AI Concierge. How can I assist you with our fine dining menu or story today?" }
   ]);
   const [chatLoading, setChatLoading] = React.useState(false);
 
